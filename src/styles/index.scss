@@ -1,0 +1,19 @@
+$mainColor: white;
+$errorColor: red;
+
+$mainTextSize: 20px;
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    color: $mainColor;
+}
+
+body {
+    font-size: $mainTextSize;
+    font-family: 'Montserrat', sans-serif;
+}

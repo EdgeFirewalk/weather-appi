@@ -1,0 +1,64 @@
+@import 'index';
+
+.weather-widget {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 50px;
+    width: 650px;
+
+    border: 2px solid $mainColor;
+
+    box-shadow: 0 15px 25px 5px rgba(0, 0, 0, 0.2);
+}
+
+.weather-widget__location-block {
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+
+    font-size: $mainTextSize + 8px;
+
+    border-bottom: 1px solid $mainColor;
+}
+
+.weather-widget__weather-block {
+    display: flex;
+}
+
+.weather-widget__img-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 25px;
+
+    text-align: center;
+}
+
+.weather-widget__img {
+    width: 75 * 3px;
+    height: 45 * 3px;
+}
+
+.weather-widget__text {
+    font-size: $mainTextSize + 15px;
+}
+
+.weather-widget__weather-info {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.weather-widget__temperature {
+    margin-bottom: 15px;
+
+    font-size: $mainTextSize + 60px;
+
+    border-bottom: 1px solid $mainColor;
+}
+
+.weather-widget__error {
+    margin-top: 20px;
+
+    color: $errorColor;
+}
