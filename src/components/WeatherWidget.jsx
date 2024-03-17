@@ -39,7 +39,7 @@ const WeatherWidget = () => {
         WeatherText: '',
         Temperature: {
             Metric: {
-                Value: '-0.0'
+                Value: 0
             }
         },
         HasPrecipitation: false,
@@ -47,15 +47,15 @@ const WeatherWidget = () => {
     });
     const [error, setError] = useState('');
 
-    useEffect(() => {
+    useEffect(() => {	
         fetch(
             'http://dataservice.accuweather.com/currentconditions/v1/294463?apikey=%20%09KANPq6J8AWU1iaWP4iJEb32tQ7MVmpOX&language=ru-ru&details=false'
         )
             .then((response) => response.json())
             .then((res) => setWeatherConditions(res[0]))
             .catch((err) => setError(err.toString()));
-
-        setError('');
+		
+		setError('');
     }, [weatherConditions]);
 
     return (
