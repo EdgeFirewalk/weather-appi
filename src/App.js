@@ -1,17 +1,20 @@
 import './styles/App.scss';
 import { useEffect, useState } from 'react';
 import WeatherWidget from './components/WeatherWidget';
-import {clear} from "@testing-library/user-event/dist/clear";
 
 function App() {
     const [backgroundColor, setBackgroundColor] = useState(
         'linear-gradient(0deg, rgba(59,57,83,1) 0%, rgba(1,31,53,1) 100%)'
     );
-    const [currentTime, setCurrentTime] = useState(new Date().toLocaleTimeString([], { hour: '2-digit' }));
+    const [currentTime, setCurrentTime] = useState(
+        new Date().toLocaleTimeString([], { hour: '2-digit' })
+    );
 
     useEffect(() => {
         const timer = setInterval(() => {
-            setCurrentTime(new Date().toLocaleTimeString([], {hour: '2-digit'}));
+            setCurrentTime(
+                new Date().toLocaleTimeString([], { hour: '2-digit' })
+            );
         });
 
         if (currentTime >= 5 && currentTime < 13) {
@@ -32,8 +35,10 @@ function App() {
             );
         }
 
-        return (() => { clearInterval(timer); })
-    }, []);
+        return () => {
+            clearInterval(timer);
+        };
+    }, [currentTime]);
 
     return (
         <div className="App" style={{ background: backgroundColor }}>
